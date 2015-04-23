@@ -1,0 +1,156 @@
+<?php
+/**
+ * @file
+ * open_way_structure_volunteer_opportunities.features.content.inc
+ */
+
+/**
+ * Implements hook_content_defaults().
+ */
+function open_way_structure_volunteer_opportunities_content_defaults() {
+  $content = array();
+
+  $content['ow_opportunity_contact_form'] = (object) array(
+    'webform' => array(
+      'confirmation' => '<p>Your email has been sent.</p>
+',
+      'teaser' => '0',
+      'submit_text' => 'Submit Request for Information',
+      'submit_limit' => '-1',
+      'submit_interval' => '-1',
+      'email' => NULL,
+      'email_from_name' => NULL,
+      'email_from_address' => NULL,
+      'email_subject' => NULL,
+      'additional_validate' => NULL,
+      'additional_submit' => NULL,
+      'confirmation_format' => '1',
+      'submit_notice' => '0',
+      'allow_draft' => '0',
+      'redirect_url' => 'node/%get[nid]',
+      'block' => '0',
+      'status' => '1',
+      'auto_save' => '0',
+      'total_submit_limit' => '-1',
+      'total_submit_interval' => '-1',
+      'webform_ajax' => '0',
+      'record_exists' => TRUE,
+      'roles' => array(
+        0 => '1',
+        1 => '2',
+      ),
+      'emails' => array(
+        1 => array(
+          'nid' => '4706',
+          'eid' => '1',
+          'email' => '4',
+          'subject' => 'Volunteer Info Request: %get[title]',
+          'from_name' => 'default',
+          'from_address' => 'no-reply@uwgnh.org',
+          'template' => 'Submitted on %date
+Submitted values are:
+%email_values
+',
+          'excluded_components' => array(),
+          'html' => '0',
+          'attachments' => '0',
+        ),
+      ),
+      'components' => array(
+        0 => array(
+          'pid' => '0',
+          'form_key' => 'volunteer_email',
+          'name' => 'Your Email',
+          'type' => 'email',
+          'value' => '%useremail',
+          'extra' => array(
+            'title_display' => 'before',
+            'private' => 0,
+            'disabled' => 0,
+            'unique' => 0,
+            'conditional_operator' => '=',
+            'width' => '',
+            'description' => '',
+            'attributes' => array(),
+            'conditional_component' => '',
+            'conditional_values' => '',
+          ),
+          'mandatory' => '1',
+          'weight' => '1',
+          'page_num' => 1,
+        ),
+        1 => array(
+          'pid' => '0',
+          'form_key' => 'volunteer_message',
+          'name' => 'Message',
+          'type' => 'textarea',
+          'value' => 'Please tell me more about %get[opportunity_title]',
+          'extra' => array(
+            'title_display' => 0,
+            'private' => 0,
+            'resizable' => 1,
+            'disabled' => 0,
+            'conditional_operator' => '=',
+            'cols' => '',
+            'rows' => '',
+            'description' => '',
+            'attributes' => array(),
+            'conditional_component' => '',
+            'conditional_values' => '',
+          ),
+          'mandatory' => '0',
+          'weight' => '2',
+          'page_num' => 1,
+        ),
+        2 => array(
+          'pid' => '0',
+          'form_key' => 'contact_email',
+          'name' => 'Opportunity Contact Email',
+          'type' => 'email',
+          'value' => '%get[contact_email]',
+          'extra' => array(
+            'title_display' => 'before',
+            'private' => 1,
+            'disabled' => 0,
+            'unique' => 0,
+            'conditional_operator' => '=',
+            'width' => '',
+            'description' => '',
+            'attributes' => array(),
+            'conditional_component' => '',
+            'conditional_values' => '',
+          ),
+          'mandatory' => '1',
+          'weight' => '3',
+          'page_num' => 1,
+        ),
+      ),
+    ),
+    'exported_path' => 'form/volunteer-opportunity-contact',
+    'title' => 'Volunteer Opportunity Contact',
+    'status' => '1',
+    'promote' => '0',
+    'sticky' => '0',
+    'type' => 'webform',
+    'language' => 'und',
+    'created' => '1428961685',
+    'comment' => '0',
+    'translate' => '0',
+    'machine_name' => 'ow_opportunity_contact_form',
+    'body' => array(
+      'und' => array(
+        0 => array(
+          'value' => '<p>Form Intro Here.</p>
+',
+          'summary' => '',
+          'format' => '1',
+          'safe_value' => '<p>Form Intro Here.</p>
+',
+          'safe_summary' => '',
+        ),
+      ),
+    ),
+  );
+
+return $content;
+}

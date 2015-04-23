@@ -21,9 +21,20 @@ function open_way_structure_volunteer_opportunities_ctools_plugin_api() {
     return array("version" => "2");
   }
   list($module, $api) = func_get_args();
+  if ($module == "field_group" && $api == "field_group") {
+    return array("version" => "1");
+  }
+  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function open_way_structure_volunteer_opportunities_views_api() {
+  return array("version" => "3.0");
 }
 
 /**
@@ -49,12 +60,12 @@ function open_way_structure_volunteer_opportunities_node_info() {
 function open_way_structure_volunteer_opportunities_default_profile2_type() {
   $items = array();
   $items['ow_partner_profile'] = entity_import('profile2_type', '{
-    "userCategory" : true,
-    "userView" : true,
+    "userCategory" : false,
+    "userView" : false,
     "type" : "ow_partner_profile",
     "label" : "Nonprofit Partner Profile",
     "weight" : "0",
-    "data" : { "registration" : 0, "use_page" : 0 }
+    "data" : { "registration" : 0, "use_page" : 1 }
   }');
   return $items;
 }
