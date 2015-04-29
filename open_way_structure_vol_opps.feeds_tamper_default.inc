@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * open_way_structure_volunteer_opportunities.feeds_tamper_default.inc
+ * open_way_structure_vol_opps.feeds_tamper_default.inc
  */
 
 /**
  * Implements hook_feeds_tamper_default().
  */
-function open_way_structure_volunteer_opportunities_feeds_tamper_default() {
+function open_way_structure_vol_opps_feeds_tamper_default() {
   $export = array();
 
   $feeds_tamper = new stdClass();

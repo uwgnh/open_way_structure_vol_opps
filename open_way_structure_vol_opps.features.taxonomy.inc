@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * open_way_structure_volunteer_opportunities.features.taxonomy.inc
+ * open_way_structure_vol_opps.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function open_way_structure_volunteer_opportunities_taxonomy_default_vocabularies() {
+function open_way_structure_vol_opps_taxonomy_default_vocabularies() {
   return array(
     'ow_opportunity_audience' => array(
       'name' => 'Opportunity Audience',
@@ -32,14 +32,6 @@ function open_way_structure_volunteer_opportunities_taxonomy_default_vocabularie
       'hierarchy' => '1',
       'module' => 'taxonomy',
       'weight' => '0',
-    ),
-    'vocabulary_9' => array(
-      'name' => 'Volunteer Types',
-      'machine_name' => 'vocabulary_9',
-      'description' => '',
-      'hierarchy' => '0',
-      'module' => 'taxonomy',
-      'weight' => '-1',
     ),
   );
 }

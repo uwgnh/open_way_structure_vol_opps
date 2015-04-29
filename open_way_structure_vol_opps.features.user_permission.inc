@@ -1,21 +1,14 @@
 <?php
 /**
  * @file
- * open_way_structure_volunteer_opportunities.features.user_permission.inc
+ * open_way_structure_vol_opps.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function open_way_structure_volunteer_opportunities_user_default_permissions() {
+function open_way_structure_vol_opps_user_default_permissions() {
   $permissions = array();
-
-  // Exported permission: administer profile2_regpath.
-  $permissions['administer profile2_regpath'] = array(
-    'name' => 'administer profile2_regpath',
-    'roles' => array(),
-    'module' => 'profile2_regpath',
-  );
 
   // Exported permission: create ow_volunteer_opportunity content.
   $permissions['create ow_volunteer_opportunity content'] = array(

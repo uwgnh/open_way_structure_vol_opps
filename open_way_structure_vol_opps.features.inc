@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * open_way_structure_volunteer_opportunities.features.inc
+ * open_way_structure_vol_opps.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function open_way_structure_volunteer_opportunities_ctools_plugin_api() {
+function open_way_structure_vol_opps_ctools_plugin_api() {
   list($module, $api) = func_get_args();
   if ($module == "facetapi" && $api == "facetapi_defaults") {
     return array("version" => "1");
@@ -33,14 +33,46 @@ function open_way_structure_volunteer_opportunities_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function open_way_structure_volunteer_opportunities_views_api() {
+function open_way_structure_vol_opps_views_api() {
   return array("version" => "3.0");
+}
+
+/**
+ * Implements hook_image_default_styles().
+ */
+function open_way_structure_vol_opps_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: ow_opportunity_image.
+  $styles['ow_opportunity_image'] = array(
+    'name' => 'ow_opportunity_image',
+    'label' => 'Volunteer Opportunity Image',
+    'effects' => array(
+      36 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => '600',
+          'height' => '300',
+        ),
+        'weight' => '1',
+      ),
+    ),
+  );
+
+  return $styles;
 }
 
 /**
  * Implements hook_node_info().
  */
-function open_way_structure_volunteer_opportunities_node_info() {
+function open_way_structure_vol_opps_node_info() {
   $items = array(
     'ow_volunteer_opportunity' => array(
       'name' => t('Volunteer Opportunity'),
@@ -57,7 +89,7 @@ function open_way_structure_volunteer_opportunities_node_info() {
 /**
  * Implements hook_default_profile2_type().
  */
-function open_way_structure_volunteer_opportunities_default_profile2_type() {
+function open_way_structure_vol_opps_default_profile2_type() {
   $items = array();
   $items['ow_partner_profile'] = entity_import('profile2_type', '{
     "userCategory" : false,
@@ -73,7 +105,7 @@ function open_way_structure_volunteer_opportunities_default_profile2_type() {
 /**
  * Implements hook_default_search_api_index().
  */
-function open_way_structure_volunteer_opportunities_default_search_api_index() {
+function open_way_structure_vol_opps_default_search_api_index() {
   $items = array();
   $items['ow_opportunities_index'] = entity_import('search_api_index', '{
     "name" : "Opportunities ",
@@ -174,7 +206,7 @@ function open_way_structure_volunteer_opportunities_default_search_api_index() {
 /**
  * Implements hook_default_search_api_server().
  */
-function open_way_structure_volunteer_opportunities_default_search_api_server() {
+function open_way_structure_vol_opps_default_search_api_server() {
   $items = array();
   $items['ow_opportunities_db'] = entity_import('search_api_server', '{
     "name" : "opportunities",

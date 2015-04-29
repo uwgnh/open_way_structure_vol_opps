@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * open_way_structure_volunteer_opportunities.feeds_importer_default.inc
+ * open_way_structure_vol_opps.feeds_importer_default.inc
  */
 
 /**
  * Implements hook_feeds_importer_default().
  */
-function open_way_structure_volunteer_opportunities_feeds_importer_default() {
+function open_way_structure_vol_opps_feeds_importer_default() {
   $export = array();
 
   $feeds_importer = new stdClass();
@@ -96,7 +96,7 @@ function open_way_structure_volunteer_opportunities_feeds_importer_default() {
     ),
     'content_type' => '',
     'update' => 0,
-    'import_period' => '1800',
+    'import_period' => '-1',
     'expire_period' => 3600,
     'import_on_create' => 1,
     'process_in_background' => 0,
@@ -187,7 +187,7 @@ function open_way_structure_volunteer_opportunities_feeds_importer_default() {
     ),
     'content_type' => '',
     'update' => 0,
-    'import_period' => '1800',
+    'import_period' => '-1',
     'expire_period' => 3600,
     'import_on_create' => 1,
     'process_in_background' => 0,

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * open_way_structure_volunteer_opportunities.facetapi_defaults.inc
+ * open_way_structure_vol_opps.facetapi_defaults.inc
  */
 
 /**
  * Implements hook_facetapi_default_facet_settings().
  */
-function open_way_structure_volunteer_opportunities_facetapi_default_facet_settings() {
+function open_way_structure_vol_opps_facetapi_default_facet_settings() {
   $export = array();
 
   $facet = new stdClass();
@@ -64,6 +64,35 @@ function open_way_structure_volunteer_opportunities_facetapi_default_facet_setti
     'pretty_paths_taxonomy_pathauto_vocabulary' => 'ow_opportunity_audience',
   );
   $export['search_api@ow_opportunities_index::field_ow_opportunity_audience'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
+  $facet->name = 'search_api@ow_opportunities_index::field_ow_opportunity_town';
+  $facet->searcher = 'search_api@ow_opportunities_index';
+  $facet->realm = '';
+  $facet->facet = 'field_ow_opportunity_town';
+  $facet->enabled = FALSE;
+  $facet->settings = array(
+    'operator' => 'or',
+    'hard_limit' => '50',
+    'dependencies' => array(
+      'bundle' => 'none',
+      'bundle_selected' => array(),
+      'roles' => array(),
+    ),
+    'facet_mincount' => '1',
+    'facet_missing' => '0',
+    'flatten' => '0',
+    'query_type' => 'term',
+    'default_true' => TRUE,
+    'facet_search_ids' => array(),
+    'exclude' => 0,
+    'pretty_paths_alias' => 'field_ow_opportunity_town',
+    'pretty_paths_taxonomy_pathauto' => 0,
+    'pretty_paths_taxonomy_pathauto_vocabulary' => 'ow_opportunity_town',
+  );
+  $export['search_api@ow_opportunities_index::field_ow_opportunity_town'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
@@ -327,24 +356,32 @@ function open_way_structure_volunteer_opportunities_facetapi_default_facet_setti
     'widget' => 'facetapi_links',
     'filters' => array(),
     'active_sorts' => array(
-      'active' => 'active',
       'count' => 'count',
+      'active' => 'active',
       'display' => 'display',
+      'indexed' => 0,
     ),
     'sort_weight' => array(
-      'active' => -50,
-      'count' => -49,
-      'display' => -48,
+      'count' => '-50',
+      'active' => '-49',
+      'display' => '-48',
+      'indexed' => '-47',
     ),
     'sort_order' => array(
-      'active' => 3,
-      'count' => 3,
-      'display' => 4,
+      'count' => '3',
+      'active' => '3',
+      'display' => '4',
+      'indexed' => '4',
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => 20,
+    'soft_limit' => '20',
     'nofollow' => 1,
     'show_expanded' => 0,
+    'empty_text' => array(
+      'value' => '',
+      'format' => '1',
+    ),
+    'submit_realm' => 'Save and go back to realm settings',
   );
   $export['search_api@ow_opportunities_index:block:field_ow_opportunity_town'] = $facet;
 
@@ -361,16 +398,16 @@ function open_way_structure_volunteer_opportunities_facetapi_default_facet_setti
     'widget' => 'facetapi_checkbox_links',
     'filters' => array(),
     'active_sorts' => array(
-      'active' => 'active',
       'count' => 'count',
+      'active' => 'active',
       'display' => 'display',
       'indexed' => 0,
     ),
     'sort_weight' => array(
-      'active' => '-50',
-      'count' => '-49',
+      'active' => '-49',
+      'count' => '-50',
       'display' => '-48',
-      'indexed' => '0',
+      'indexed' => '-47',
     ),
     'sort_order' => array(
       'active' => '3',
@@ -457,6 +494,40 @@ function open_way_structure_volunteer_opportunities_facetapi_default_facet_setti
     'show_expanded' => 0,
   );
   $export['search_api@ow_opportunities_index:block:search_api_language'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
+  $facet->name = 'search_api@ow_opportunities_index:block:title';
+  $facet->searcher = 'search_api@ow_opportunities_index';
+  $facet->realm = 'block';
+  $facet->facet = 'title';
+  $facet->enabled = FALSE;
+  $facet->settings = array(
+    'weight' => 0,
+    'widget' => 'facetapi_links',
+    'filters' => array(),
+    'active_sorts' => array(
+      'active' => 'active',
+      'count' => 'count',
+      'display' => 'display',
+    ),
+    'sort_weight' => array(
+      'active' => -50,
+      'count' => -49,
+      'display' => -48,
+    ),
+    'sort_order' => array(
+      'active' => 3,
+      'count' => 3,
+      'display' => 4,
+    ),
+    'empty_behavior' => 'none',
+    'soft_limit' => 20,
+    'nofollow' => 1,
+    'show_expanded' => 0,
+  );
+  $export['search_api@ow_opportunities_index:block:title'] = $facet;
 
   return $export;
 }

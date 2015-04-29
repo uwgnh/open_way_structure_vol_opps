@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * open_way_structure_volunteer_opportunities.features.field.inc
+ * open_way_structure_vol_opps.features.field.inc
  */
 
 /**
  * Implements hook_field_default_fields().
  */
-function open_way_structure_volunteer_opportunities_field_default_fields() {
+function open_way_structure_vol_opps_field_default_fields() {
   $fields = array();
 
   // Exported field: 'node-ow_volunteer_opportunity-body'.
@@ -52,7 +52,7 @@ function open_way_structure_volunteer_opportunities_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '1',
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -61,7 +61,7 @@ function open_way_structure_volunteer_opportunities_field_default_fields() {
             'trim_length' => 600,
           ),
           'type' => 'text_summary_or_trimmed',
-          'weight' => 0,
+          'weight' => '1',
         ),
       ),
       'entity_type' => 'node',
@@ -115,7 +115,7 @@ function open_way_structure_volunteer_opportunities_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '1',
+        'weight' => '2',
       ),
     ),
   );
@@ -160,13 +160,13 @@ function open_way_structure_volunteer_opportunities_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '5',
+          'weight' => '6',
         ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '3',
         ),
       ),
       'entity_type' => 'node',
@@ -275,7 +275,7 @@ function open_way_structure_volunteer_opportunities_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '5',
         ),
       ),
       'entity_type' => 'node',
@@ -323,13 +323,13 @@ function open_way_structure_volunteer_opportunities_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '6',
+          'weight' => '7',
         ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '2',
         ),
       ),
       'entity_type' => 'node',
@@ -346,7 +346,7 @@ function open_way_structure_volunteer_opportunities_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'email_textfield',
-        'weight' => '3',
+        'weight' => '4',
       ),
     ),
   );
@@ -398,13 +398,20 @@ function open_way_structure_volunteer_opportunities_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '0',
+          'weight' => '1',
         ),
         'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
+          'label' => 'hidden',
+          'module' => 'date',
+          'settings' => array(
+            'format_type' => 'long',
+            'fromto' => 'value',
+            'multiple_from' => '',
+            'multiple_number' => '',
+            'multiple_to' => '',
+          ),
+          'type' => 'date_default',
+          'weight' => '0',
         ),
       ),
       'entity_type' => 'node',
@@ -430,6 +437,92 @@ function open_way_structure_volunteer_opportunities_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_popup',
+        'weight' => '1',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-ow_volunteer_opportunity-field_ow_opportunity_image'.
+  $fields['node-ow_volunteer_opportunity-field_ow_opportunity_image'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_ow_opportunity_image',
+      'foreign keys' => array(
+        'fid' => array(
+          'columns' => array(
+            'fid' => 'fid',
+          ),
+          'table' => 'file_managed',
+        ),
+      ),
+      'indexes' => array(
+        'fid' => array(
+          0 => 'fid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'image',
+      'settings' => array(
+        'default_image' => 0,
+        'profile2_private' => FALSE,
+        'uri_scheme' => 'public',
+      ),
+      'translatable' => '0',
+      'type' => 'image',
+    ),
+    'field_instance' => array(
+      'bundle' => 'ow_volunteer_opportunity',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'image',
+          'settings' => array(
+            'image_link' => '',
+            'image_style' => 'ow_opportunity_image',
+          ),
+          'type' => 'image',
+          'weight' => '0',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_ow_opportunity_image',
+      'label' => 'Volunteer Opportunity Image',
+      'required' => 0,
+      'settings' => array(
+        'alt_field' => 0,
+        'default_image' => 0,
+        'file_directory' => 'volunteer-opportunity-images',
+        'file_extensions' => 'png gif jpg jpeg',
+        'max_filesize' => '',
+        'max_resolution' => '1200x1200',
+        'min_resolution' => '',
+        'title_field' => 0,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'image',
+        'settings' => array(
+          'collapsible' => '2',
+          'croparea' => '500x600',
+          'enforce_minimum' => 0,
+          'enforce_ratio' => 1,
+          'preview_image_style' => 'ow_opportunity_image',
+          'progress_indicator' => 'throbber',
+          'resolution' => '600x300',
+        ),
+        'type' => 'image_image',
         'weight' => '1',
       ),
     ),
@@ -532,13 +625,13 @@ function open_way_structure_volunteer_opportunities_field_default_fields() {
           'module' => 'location_cck',
           'settings' => array(),
           'type' => 'location_all',
-          'weight' => '3',
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '8',
         ),
       ),
       'entity_type' => 'node',
@@ -598,13 +691,13 @@ function open_way_structure_volunteer_opportunities_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '2',
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '6',
         ),
       ),
       'entity_type' => 'node',
@@ -656,7 +749,7 @@ function open_way_structure_volunteer_opportunities_field_default_fields() {
           'rows' => '2',
         ),
         'type' => 'text_textarea',
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
@@ -713,7 +806,7 @@ function open_way_structure_volunteer_opportunities_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '4',
         ),
       ),
       'entity_type' => 'node',
@@ -785,7 +878,7 @@ function open_way_structure_volunteer_opportunities_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '7',
         ),
       ),
       'entity_type' => 'node',
@@ -1446,6 +1539,7 @@ function open_way_structure_volunteer_opportunities_field_default_fields() {
   t('Opportunity Type');
   t('The Address of your nonprofit\'s primary location.');
   t('The email address to which volunteer inquiries about this opportunity should be sent.');
+  t('Volunteer Opportunity Image');
   t('Volunteer Requirements');
   t('Website');
   t('What town will the volunteer activity happen?');

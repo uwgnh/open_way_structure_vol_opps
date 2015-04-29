@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * open_way_structure_volunteer_opportunities.field_group.inc
+ * open_way_structure_vol_opps.field_group.inc
  */
 
 /**
  * Implements hook_field_group_info().
  */
-function open_way_structure_volunteer_opportunities_field_group_info() {
+function open_way_structure_vol_opps_field_group_info() {
   $export = array();
 
   $field_group = new stdClass();
@@ -21,7 +21,7 @@ function open_way_structure_volunteer_opportunities_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Categorization ',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_ow_opportunity_type',
       1 => 'field_ow_opportunity_audience',
@@ -50,7 +50,7 @@ function open_way_structure_volunteer_opportunities_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Set a Date and Time',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_ow_opportunity_date',
     ),
@@ -78,7 +78,7 @@ function open_way_structure_volunteer_opportunities_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Search Filters',
-    'weight' => '7',
+    'weight' => '8',
     'children' => array(
       0 => 'field_ow_opportunity_type',
       1 => 'field_ow_opportunity_audience',
@@ -108,7 +108,7 @@ function open_way_structure_volunteer_opportunities_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Set a Location',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_ow_opportunity_location',
     ),
@@ -124,6 +124,34 @@ function open_way_structure_volunteer_opportunities_field_group_info() {
     ),
   );
   $export['group_location|node|ow_volunteer_opportunity|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_ow_opportunity_office_use|node|ow_volunteer_opportunity|form';
+  $field_group->group_name = 'group_ow_opportunity_office_use';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'ow_volunteer_opportunity';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Office Use',
+    'weight' => '13',
+    'children' => array(
+      0 => 'field_ow_opp_agency_import',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Office Use',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-ow-opportunity-office-use field-group-fieldset',
+        'description' => 'Fields used by United Way staff during initial agency import to system',
+      ),
+      'formatter' => 'collapsed',
+    ),
+  );
+  $export['group_ow_opportunity_office_use|node|ow_volunteer_opportunity|form'] = $field_group;
 
   return $export;
 }

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * open_way_structure_volunteer_opportunities.features.content.inc
+ * open_way_structure_vol_opps.features.content.inc
  */
 
 /**
  * Implements hook_content_defaults().
  */
-function open_way_structure_volunteer_opportunities_content_defaults() {
+function open_way_structure_vol_opps_content_defaults() {
   $content = array();
 
   $content['ow_opportunity_contact_form'] = (object) array(
@@ -55,6 +55,22 @@ Submitted values are:
           'html' => '0',
           'attachments' => '0',
         ),
+        2 => array(
+          'nid' => '4706',
+          'eid' => '2',
+          'email' => '2',
+          'subject' => 'Thank You for Reaching Out to Volunteer',
+          'from_name' => 'default',
+          'from_address' => 'default',
+          'template' => 'Thank you for reaching out volunteer. An email has been sent to %get[contact_email].
+
+Want to learn about more ways to give, volunteer and advocate? 
+
+Signup for notices from United Way: http://eepurl.com/l2LYf',
+          'excluded_components' => array(),
+          'html' => '0',
+          'attachments' => '0',
+        ),
       ),
       'components' => array(
         0 => array(
@@ -81,6 +97,83 @@ Submitted values are:
         ),
         1 => array(
           'pid' => '0',
+          'form_key' => 'company_or_group',
+          'name' => 'Company or Group',
+          'type' => 'fieldset',
+          'value' => '',
+          'extra' => array(
+            'description' => 'Looking to volunteer with a company or group? These additional questions will help us serve you.',
+            'title_display' => 0,
+            'private' => 0,
+            'collapsible' => 1,
+            'collapsed' => 1,
+            'conditional_operator' => '=',
+            'conditional_component' => '',
+            'conditional_values' => '',
+          ),
+          'mandatory' => '0',
+          'weight' => '2',
+          'page_num' => 1,
+        ),
+        2 => array(
+          'pid' => '5',
+          'form_key' => 'approximately_how_many_people',
+          'name' => 'Approximately How Many People',
+          'type' => 'number',
+          'value' => '',
+          'extra' => array(
+            'title_display' => 'before',
+            'private' => 0,
+            'type' => 'textfield',
+            'disabled' => 0,
+            'decimals' => '',
+            'separator' => ',',
+            'point' => '.',
+            'unique' => 0,
+            'integer' => 0,
+            'conditional_operator' => '=',
+            'excludezero' => 0,
+            'field_prefix' => '',
+            'field_suffix' => '',
+            'description' => '',
+            'attributes' => array(),
+            'min' => '',
+            'max' => '',
+            'step' => '',
+            'conditional_component' => '',
+            'conditional_values' => '',
+          ),
+          'mandatory' => '0',
+          'weight' => '5',
+          'page_num' => 1,
+        ),
+        3 => array(
+          'pid' => '5',
+          'form_key' => 'company_or_group_name',
+          'name' => 'Company or Group Name',
+          'type' => 'textfield',
+          'value' => '',
+          'extra' => array(
+            'title_display' => 'before',
+            'private' => 0,
+            'disabled' => 0,
+            'unique' => 0,
+            'conditional_operator' => '=',
+            'width' => '',
+            'maxlength' => '',
+            'field_prefix' => '',
+            'field_suffix' => '',
+            'description' => '',
+            'attributes' => array(),
+            'conditional_component' => '',
+            'conditional_values' => '',
+          ),
+          'mandatory' => '0',
+          'weight' => '6',
+          'page_num' => 1,
+        ),
+        4 => array(
+          'pid' => '0',
           'form_key' => 'volunteer_message',
           'name' => 'Message',
           'type' => 'textarea',
@@ -99,10 +192,10 @@ Submitted values are:
             'conditional_values' => '',
           ),
           'mandatory' => '0',
-          'weight' => '2',
+          'weight' => '3',
           'page_num' => 1,
         ),
-        2 => array(
+        5 => array(
           'pid' => '0',
           'form_key' => 'contact_email',
           'name' => 'Opportunity Contact Email',
@@ -121,7 +214,7 @@ Submitted values are:
             'conditional_values' => '',
           ),
           'mandatory' => '1',
-          'weight' => '3',
+          'weight' => '4',
           'page_num' => 1,
         ),
       ),
@@ -140,11 +233,11 @@ Submitted values are:
     'body' => array(
       'und' => array(
         0 => array(
-          'value' => '<p>Form Intro Here.</p>
+          'value' => '<p>Please put in your email and any message you wish to send to the contact person for this volunteer opportunity.</p>
 ',
           'summary' => '',
           'format' => '1',
-          'safe_value' => '<p>Form Intro Here.</p>
+          'safe_value' => '<p>Please put in your email and any message you wish to send to the contact person for this volunteer opportunity.</p>
 ',
           'safe_summary' => '',
         ),

@@ -4,4 +4,4 @@
  * Code for the Open Way - Structure - Volunteer Opportunities feature.
  */
 
-include_once 'open_way_structure_volunteer_opportunities.features.inc';
+include_once 'open_way_structure_vol_opps.features.inc';
