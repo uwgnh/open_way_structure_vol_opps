@@ -92,12 +92,12 @@ function open_way_structure_vol_opps_node_info() {
 function open_way_structure_vol_opps_default_profile2_type() {
   $items = array();
   $items['ow_partner_profile'] = entity_import('profile2_type', '{
-    "userCategory" : false,
-    "userView" : false,
+    "userCategory" : true,
+    "userView" : true,
     "type" : "ow_partner_profile",
     "label" : "Nonprofit Partner Profile",
     "weight" : "0",
-    "data" : { "registration" : 0, "use_page" : 1 }
+    "data" : { "registration" : 0, "use_page" : 0 }
   }');
   return $items;
 }
@@ -114,7 +114,7 @@ function open_way_structure_vol_opps_default_search_api_index() {
     "server" : "ow_opportunities_db",
     "item_type" : "node",
     "options" : {
-      "index_directly" : 0,
+      "index_directly" : 1,
       "cron_limit" : "25",
       "fields" : {
         "author" : { "type" : "integer", "entity_type" : "user" },

@@ -21,23 +21,17 @@ function open_way_structure_vol_opps_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'live_united_2013' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'live_united_2013',
-        'weight' => '0',
+      'open_way_2015' => array(
+        'region' => 'sidebar_second',
+        'status' => '1',
+        'theme' => 'open_way_2015',
+        'weight' => '1',
       ),
       'seven' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'seven',
         'weight' => '0',
-      ),
-      'unitedway2014' => array(
-        'region' => 'sidebar_second',
-        'status' => '1',
-        'theme' => 'unitedway2014',
-        'weight' => '1',
       ),
     ),
     'title' => 'Type',
@@ -53,23 +47,17 @@ function open_way_structure_vol_opps_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'live_united_2013' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'live_united_2013',
-        'weight' => '0',
+      'open_way_2015' => array(
+        'region' => 'sidebar_second',
+        'status' => '1',
+        'theme' => 'open_way_2015',
+        'weight' => '3',
       ),
       'seven' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'seven',
         'weight' => '0',
-      ),
-      'unitedway2014' => array(
-        'region' => 'sidebar_second',
-        'status' => '1',
-        'theme' => 'unitedway2014',
-        'weight' => '3',
       ),
     ),
     'title' => 'Audience',
@@ -85,23 +73,17 @@ function open_way_structure_vol_opps_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'live_united_2013' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'live_united_2013',
-        'weight' => '0',
+      'open_way_2015' => array(
+        'region' => 'sidebar_second',
+        'status' => '1',
+        'theme' => 'open_way_2015',
+        'weight' => '4',
       ),
       'seven' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'seven',
         'weight' => '0',
-      ),
-      'unitedway2014' => array(
-        'region' => 'sidebar_second',
-        'status' => '1',
-        'theme' => 'unitedway2014',
-        'weight' => '4',
       ),
     ),
     'title' => 'Partner',
@@ -117,23 +99,17 @@ function open_way_structure_vol_opps_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'live_united_2013' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'live_united_2013',
-        'weight' => '0',
+      'open_way_2015' => array(
+        'region' => 'sidebar_second',
+        'status' => '1',
+        'theme' => 'open_way_2015',
+        'weight' => '2',
       ),
       'seven' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'seven',
         'weight' => '0',
-      ),
-      'unitedway2014' => array(
-        'region' => 'sidebar_second',
-        'status' => '1',
-        'theme' => 'unitedway2014',
-        'weight' => '2',
       ),
     ),
     'title' => '',
@@ -151,23 +127,17 @@ function open_way_structure_vol_opps_default_fe_block_settings() {
     'pages' => '*/edit',
     'roles' => array(),
     'themes' => array(
-      'live_united_2013' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'live_united_2013',
-        'weight' => '0',
+      'open_way_2015' => array(
+        'region' => 'sidebar_second',
+        'status' => '1',
+        'theme' => 'open_way_2015',
+        'weight' => '8',
       ),
       'seven' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'seven',
         'weight' => '0',
-      ),
-      'unitedway2014' => array(
-        'region' => 'sidebar_second',
-        'status' => '1',
-        'theme' => 'unitedway2014',
-        'weight' => '7',
       ),
     ),
     'title' => '<none>',
@@ -185,23 +155,17 @@ function open_way_structure_vol_opps_default_fe_block_settings() {
     'pages' => '*/edit',
     'roles' => array(),
     'themes' => array(
-      'live_united_2013' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'live_united_2013',
-        'weight' => '0',
+      'open_way_2015' => array(
+        'region' => 'sidebar_second',
+        'status' => '1',
+        'theme' => 'open_way_2015',
+        'weight' => '7',
       ),
       'seven' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'seven',
         'weight' => '0',
-      ),
-      'unitedway2014' => array(
-        'region' => 'sidebar_second',
-        'status' => '1',
-        'theme' => 'unitedway2014',
-        'weight' => '8',
       ),
     ),
     'title' => '<none>',
@@ -226,23 +190,17 @@ user*',
       'Webmaster' => '15',
     ),
     'themes' => array(
-      'live_united_2013' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'live_united_2013',
-        'weight' => '0',
+      'open_way_2015' => array(
+        'region' => 'content',
+        'status' => '1',
+        'theme' => 'open_way_2015',
+        'weight' => '23',
       ),
       'seven' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'seven',
         'weight' => '0',
-      ),
-      'unitedway2014' => array(
-        'region' => 'content',
-        'status' => '1',
-        'theme' => 'unitedway2014',
-        'weight' => '24',
       ),
     ),
     'title' => '',

@@ -50,7 +50,7 @@ function open_way_structure_vol_opps_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Set a Date and Time',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_ow_opportunity_date',
     ),
@@ -78,7 +78,7 @@ function open_way_structure_vol_opps_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Search Filters',
-    'weight' => '8',
+    'weight' => '9',
     'children' => array(
       0 => 'field_ow_opportunity_type',
       1 => 'field_ow_opportunity_audience',
@@ -108,7 +108,7 @@ function open_way_structure_vol_opps_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Set a Location',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_ow_opportunity_location',
     ),
@@ -136,7 +136,7 @@ function open_way_structure_vol_opps_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Office Use',
-    'weight' => '13',
+    'weight' => '14',
     'children' => array(
       0 => 'field_ow_opp_agency_import',
     ),

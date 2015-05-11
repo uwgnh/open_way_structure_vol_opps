@@ -48,12 +48,6 @@ function open_way_structure_vol_opps_views_default_views() {
   $handler->display->display_options['style_options']['bubbletextenabled'] = 1;
   $handler->display->display_options['style_options']['bubbletextfield'] = 'nothing';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<p><strong><a href="/volunteer/find">Find</a></strong> /&nbsp;<strong><a href="/volunteer/map">Map</a></strong> /&nbsp;<strong><a href="/volunteer/calendar">Calendar</a> </strong>&nbsp;</p>';
-  $handler->display->display_options['header']['area']['format'] = '2';
   /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
@@ -235,7 +229,7 @@ function open_way_structure_vol_opps_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Search  Volunteer Opportunities ';
+  $handler->display->display_options['title'] = 'Find Volunteer Opportunities ';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
@@ -256,8 +250,8 @@ function open_way_structure_vol_opps_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<p><strong><a href="/volunteer/find">Find</a></strong> /&nbsp;<strong><a href="/volunteer/map">Map</a></strong> /&nbsp;<strong><a href="/volunteer/calendar">Calendar</a> </strong>&nbsp;</p>';
-  $handler->display->display_options['header']['area']['format'] = '1';
+  $handler->display->display_options['header']['area']['content'] = '<a href="#sidebar" class="node-readmore mobile-only">Filter Options</a>';
+  $handler->display->display_options['header']['area']['format'] = 'html_code';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
@@ -470,12 +464,6 @@ function open_way_structure_vol_opps_views_default_views() {
     1531 => '#ffffff',
   );
   /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<p><strong><a href="/volunteer/find">Find</a></strong> /&nbsp;<strong><a href="/volunteer/map">Map</a></strong> /&nbsp;<strong><a href="/volunteer/calendar">Calendar</a> </strong>&nbsp;</p>';
-  $handler->display->display_options['header']['area']['format'] = '2';
-  /* Header: Global: Text area */
   $handler->display->display_options['header']['area_1']['id'] = 'area_1';
   $handler->display->display_options['header']['area_1']['table'] = 'views';
   $handler->display->display_options['header']['area_1']['field'] = 'area';
@@ -675,6 +663,18 @@ function open_way_structure_vol_opps_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Relationship: User: Profile */
+  $handler->display->display_options['relationships']['profile']['id'] = 'profile';
+  $handler->display->display_options['relationships']['profile']['table'] = 'users';
+  $handler->display->display_options['relationships']['profile']['field'] = 'profile';
+  $handler->display->display_options['relationships']['profile']['relationship'] = 'uid';
+  $handler->display->display_options['relationships']['profile']['bundle_types'] = array(
+    'ow_partner_profile' => 'ow_partner_profile',
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -694,13 +694,21 @@ function open_way_structure_vol_opps_views_default_views() {
   $handler->display->display_options['fields']['field_ow_opportunity_contact']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_ow_opportunity_contact']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_ow_opportunity_contact']['type'] = 'email_plain';
+  /* Field: Profile: Agency Name */
+  $handler->display->display_options['fields']['field_ow_nonprofit_name']['id'] = 'field_ow_nonprofit_name';
+  $handler->display->display_options['fields']['field_ow_nonprofit_name']['table'] = 'field_data_field_ow_nonprofit_name';
+  $handler->display->display_options['fields']['field_ow_nonprofit_name']['field'] = 'field_ow_nonprofit_name';
+  $handler->display->display_options['fields']['field_ow_nonprofit_name']['relationship'] = 'profile';
+  $handler->display->display_options['fields']['field_ow_nonprofit_name']['label'] = '';
+  $handler->display->display_options['fields']['field_ow_nonprofit_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_ow_nonprofit_name']['element_label_colon'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['text'] = '<a class="node-readmore" href="/form/volunteer-opportunity-contact?opportunity_title=[title] &contact_email=[field_ow_opportunity_contact]&nid=[nid]">Contact Agency</a>
+  $handler->display->display_options['fields']['nid']['alter']['text'] = '<a class="node-readmore wobble" href="/form/volunteer-opportunity-contact?opportunity_title=[title] &contact_email=[field_ow_opportunity_contact]&nid=[nid]&agency_name=[field_ow_nonprofit_name]">Contact Agency</a>
 ';
   $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'node-readmore colorbox-node';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
