@@ -34,7 +34,7 @@ function open_way_structure_vol_opps_views_default_views() {
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'gmap';
-  $handler->display->display_options['style_options']['macro'] = '[gmap |width=750px |height=600px ]';
+  $handler->display->display_options['style_options']['macro'] = '[gmap |width=100% |height=600px ]';
   $handler->display->display_options['style_options']['markertype'] = 'small red';
   $handler->display->display_options['style_options']['latfield'] = 'title';
   $handler->display->display_options['style_options']['lonfield'] = 'title';
@@ -708,7 +708,7 @@ function open_way_structure_vol_opps_views_default_views() {
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['text'] = '<a class="node-readmore wobble" href="/form/volunteer-opportunity-contact?opportunity_title=[title] &contact_email=[field_ow_opportunity_contact]&nid=[nid]&agency_name=[field_ow_nonprofit_name]">Contact Agency</a>
+  $handler->display->display_options['fields']['nid']['alter']['text'] = '<a class="volunteer-contact-button wobble animate" href="/form/volunteer-opportunity-contact?opportunity_title=[title] &contact_email=[field_ow_opportunity_contact]&nid=[nid]&agency_name=[field_ow_nonprofit_name]">Contact Agency</a>
 ';
   $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'node-readmore colorbox-node';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
@@ -760,7 +760,7 @@ function open_way_structure_vol_opps_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Partner opportunity Listing';
+  $handler->display->display_options['title'] = 'Partner Opportunity Listing';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -779,6 +779,8 @@ function open_way_structure_vol_opps_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['element_default_classes'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -790,6 +792,7 @@ function open_way_structure_vol_opps_views_default_views() {
   $handler->display->display_options['fields']['changed']['id'] = 'changed';
   $handler->display->display_options['fields']['changed']['table'] = 'node';
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
+  $handler->display->display_options['fields']['changed']['label'] = 'Updated';
   $handler->display->display_options['fields']['changed']['date_format'] = 'time ago';
   $handler->display->display_options['fields']['changed']['second_date_format'] = 'long';
   /* Sort criterion: Content: Post date */

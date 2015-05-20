@@ -112,7 +112,7 @@ function open_way_structure_vol_opps_default_fe_block_settings() {
         'weight' => '0',
       ),
     ),
-    'title' => '',
+    'title' => 'TOWN',
     'visibility' => '0',
   );
 

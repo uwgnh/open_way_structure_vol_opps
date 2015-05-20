@@ -103,19 +103,19 @@ function open_way_structure_vol_opps_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'locations' => array(
-          'weight' => '11',
+          'weight' => '10',
         ),
         'metatags' => array(
-          'weight' => '13',
-        ),
-        'title' => array(
-          'weight' => '1',
-        ),
-        'path' => array(
           'weight' => '12',
         ),
+        'title' => array(
+          'weight' => '0',
+        ),
+        'path' => array(
+          'weight' => '11',
+        ),
         'redirect' => array(
-          'weight' => '10',
+          'weight' => '9',
         ),
         'scheduler_settings' => array(
           'weight' => '2',
