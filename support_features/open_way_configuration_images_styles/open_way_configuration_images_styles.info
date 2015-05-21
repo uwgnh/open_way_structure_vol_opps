@@ -1,0 +1,16 @@
+name = Open Way Volunteer - Configuration - Images Styles
+description = Open Way - Configuration - Images Styles
+core = 7.x
+package = Open Way
+php = 5.2.4
+dependencies[] = image
+features[features_api][] = api:1
+features[image][] = ow_large-rectangle
+features[image][] = ow_large-rectangle-rounded
+features[image][] = ow_larger-rectangle
+features[image][] = ow_medium-rectangle-rounded
+features[image][] = ow_medium-square-rounded
+features[image][] = ow_small-rectangle
+features[image][] = ow_small-square-rounded
+features[image][] = ow_smaller-square-rounded
+mtime = 1432234105

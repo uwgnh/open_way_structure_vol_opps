@@ -1,0 +1,86 @@
+<?php
+/**
+ * @file
+ * roles.features.user_role.inc
+ */
+
+/**
+ * Implements hook_user_default_roles().
+ */
+function roles_user_default_roles() {
+  $roles = array();
+
+  // Exported role: Extra - Blocks
+  $roles['Extra - Blocks'] = array(
+    'name' => 'Extra - Blocks',
+    'weight' => '0',
+  );
+
+  // Exported role: Extra - Content
+  $roles['Extra - Content'] = array(
+    'name' => 'Extra - Content',
+    'weight' => '0',
+  );
+
+  // Exported role: Extra - Forms
+  $roles['Extra - Forms'] = array(
+    'name' => 'Extra - Forms',
+    'weight' => '0',
+  );
+
+  // Exported role: Extra - Menus and URL
+  $roles['Extra - Menus and URL'] = array(
+    'name' => 'Extra - Menus and URL',
+    'weight' => '0',
+  );
+
+  // Exported role: Extra - Users
+  $roles['Extra - Users'] = array(
+    'name' => 'Extra - Users',
+    'weight' => '0',
+  );
+
+  // Exported role: Webmaster
+  $roles['Webmaster'] = array(
+    'name' => 'Webmaster',
+    'weight' => '2',
+  );
+
+  // Exported role: Administrator
+  $roles['Administrator'] = array(
+    'name' => 'Administrator',
+    'weight' => '0',
+  );
+
+  // Exported role: Level2 - Publisher
+  $roles['Level2 - Publisher'] = array(
+    'name' => 'Level2 - Publisher',
+    'weight' => '0',
+  );
+
+  // Exported role: Level3 - Editor
+  $roles['Level3 - Editor'] = array(
+    'name' => 'Level3 - Editor',
+    'weight' => '0',
+  );
+
+  // Exported role: Level4 - Contributer
+  $roles['Level4 - Contributer'] = array(
+    'name' => 'Level4 - Contributer',
+    'weight' => '0',
+  );
+
+  // Exported role: Level5 - Blogger
+  $roles['Level5 - Blogger'] = array(
+    'name' => 'Level5 - Blogger',
+    'weight' => '0',
+  );
+
+  // Exported role: Type - Partner
+  $roles['Type - Partner'] = array(
+    'name' => 'Type - Partner',
+    'weight' => '0',
+  );
+
+  return $roles;
+}

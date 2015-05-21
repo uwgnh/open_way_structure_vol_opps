@@ -1,0 +1,16 @@
+name = Open Way Volunteer - Configuration - WYSIWYG
+description = Settings for editor 
+core = 7.x
+package = Open Way
+php = 5.2.4
+dependencies[] = better_formats
+dependencies[] = block
+dependencies[] = comment
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = shortcut
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:1
+features[user_permission][] = show format selection for node
+mtime = 1432238881

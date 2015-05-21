@@ -1,0 +1,110 @@
+<?php
+
+/*
+ * implimentation of hook_install
+ *
+ */
+function open_way_configuration_wysiwyg_install() {
+
+
+
+  if (module_exists('wysiwyg')) {
+    open_way_set_wysiwyg_settings();
+  }
+  
+  
+  if (module_exists('apps')) {
+    $item =  array(
+      'module' =>  'apps',
+      'theme' =>  'rubik',
+      'status' =>  1,
+      'weight' =>  1,
+      'region' =>  'dashboard_main',
+      'custom' =>  0,
+      'pages' => NULL,
+      'visibility' =>  0,
+      'cache' =>  1,
+    );
+    $item = (object) $item;
+    drupal_write_record('block', $item);
+  }
+}
+
+function open_way_set_wysiwyg_settings() {
+  $settings = array(
+    'default' => 1,
+    'user_choose' => 1,
+    'show_toggle' => 1,
+    'theme' => 'advanced',
+    'language' => 'en',
+    'buttons' => array(
+      'default' => array(
+        'Bold' => 1,
+        'Italic' => 1,
+        'Underline' => 1,
+        'Strike' => 1,
+        'JustifyLeft' => 1,
+        'JustifyCenter' => 1,
+        'JustifyRight' => 1,
+        'BulletedList' => 1,
+        'NumberedList' => 1,
+        'Undo' => 1,
+        'Redo' => 1,
+        'Link' => 1,
+        'Unlink' => 1,
+        'Blockquote' => 1,
+        'HorizontalRule' => 1,
+        'Paste' => 1,
+        'PasteFromWord' => 1,
+        'RemoveFormat' => 1,
+        'SpecialChar' => 1,
+        'Format' => 1,
+        'Table' => 1,
+        'Maximize' => 1,
+	'Indent' => 1,
+	'Outdent' => 1,
+	'Break' => 1,
+	'Media' => 1
+      ),
+      'Media' => array(
+        'Media' => 1,
+      ),
+    ),
+    'toolbar_loc' => 'top',
+    'toolbar_align' => 'left',
+    'path_loc' => 'bottom',
+    'resizing' => 1,
+    'verify_html' => 1,
+    'preformatted' => 0,
+    'convert_fonts_to_spans' => 1,
+    'remove_linebreaks' => 1,
+    'apply_source_formatting' => 0,
+    'paste_auto_cleanup_on_paste' => 1,
+    'block_formats' => 'p,h2,h3,h4,h5,h6,div',
+    'css_setting' => 'self',
+    'css_path' => '%bprofiles/open_way/themes/live_united_2012/css/wysiwyg-editor.css',
+    'css_classes' => '',
+  );
+  
+  $fields = array(
+    'format' => 'filtered_html',
+    'editor' => 'ckeditor',
+    'settings' => serialize($settings),
+  );
+
+  db_insert('wysiwyg')->fields($fields)->execute();
+  
+  db_update('filter_format')
+  ->condition('format', '')
+  ->fields(array('weight' => 1))
+  ->execute();
+  
+  db_update('filter_format')
+  ->condition('format', 'full_html')
+  ->fields(array('weight' => 0))
+  ->execute();
+
+}
+
+
+

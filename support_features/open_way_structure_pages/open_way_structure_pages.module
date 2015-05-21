@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Open Way - Structure - Pages feature.
+ */
+
+include_once('open_way_structure_pages.features.inc');

@@ -1,0 +1,120 @@
+<?php
+/**
+ * @file
+ * open_way_configuration_user_managment.features.user_permission.inc
+ */
+
+/**
+ * Implements hook_user_default_permissions().
+ */
+function open_way_configuration_user_managment_user_default_permissions() {
+  $permissions = array();
+
+  // Exported permission: assign Extra - Blocks role
+  $permissions['assign Extra - Blocks role'] = array(
+    'name' => 'assign Extra - Blocks role',
+    'roles' => array(),
+  );
+
+  // Exported permission: assign Extra - Content role
+  $permissions['assign Extra - Content role'] = array(
+    'name' => 'assign Extra - Content role',
+    'roles' => array(),
+  );
+
+  // Exported permission: assign Extra - Forms role
+  $permissions['assign Extra - Forms role'] = array(
+    'name' => 'assign Extra - Forms role',
+    'roles' => array(),
+  );
+
+  // Exported permission: assign Extra - Menus and URL role
+  $permissions['assign Extra - Menus and URL role'] = array(
+    'name' => 'assign Extra - Menus and URL role',
+    'roles' => array(),
+  );
+
+  // Exported permission: assign Extra - Users role
+  $permissions['assign Extra - Users role'] = array(
+    'name' => 'assign Extra - Users role',
+    'roles' => array(),
+  );
+
+  // Exported permission: assign Webmaster role
+  $permissions['assign Webmaster role'] = array(
+    'name' => 'assign Webmaster role',
+    'roles' => array(),
+  );
+
+  // Exported permission: assign Administrator role
+  $permissions['assign Administrator role'] = array(
+    'name' => 'assign Administrator role',
+    'roles' => array(),
+  );
+
+  // Exported permission: assign Manager role
+  $permissions['assign Manager role'] = array(
+    'name' => 'assign Manager role',
+    'roles' => array(
+      0 => 'Administrator',
+    ),
+    'module' => 'role_delegation',
+  );
+
+  // Exported permission: assign Publisher role
+  $permissions['assign Publisher role'] = array(
+    'name' => 'assign Publisher role',
+    'roles' => array(
+      0 => 'Administrator',
+      1 => 'Manager',
+    ),
+    'module' => 'role_delegation',
+  );
+
+  // Exported permission: assign Editor role
+  $permissions['assign Editor role'] = array(
+    'name' => 'assign Editor role',
+    'roles' => array(
+      0 => 'Administrator',
+      1 => 'Manager',
+    ),
+    'module' => 'role_delegation',
+  );
+
+  // Exported permission: assign Contributor role
+  $permissions['assign Contributor role'] = array(
+    'name' => 'assign Contributor role',
+    'roles' => array(
+      0 => 'Administrator',
+      1 => 'Manager',
+    ),
+    'module' => 'role_delegation',
+  );
+
+  // Exported permission: assign Blogger
+  $permissions['assign Blogger'] = array(
+    'name' => 'assign Blogger',
+    'roles' => array(
+      0 => 'Administrator',
+      1 => 'Manager',
+    ),
+    'module' => 'role_delegation',
+  );
+
+  // Exported permission: assign Partner role
+  $permissions['assign Partner role'] = array(
+    'name' => 'assign Partner role',
+    'roles' => array(),
+  );
+
+  // Exported permission: assign all roles
+  $permissions['assign all roles'] = array(
+    'name' => 'assign all roles',
+    'roles' => array(
+      0 => 'Webmaster',
+    ),
+    'module' => 'role_delegation',
+  );
+
+  return $permissions;
+}

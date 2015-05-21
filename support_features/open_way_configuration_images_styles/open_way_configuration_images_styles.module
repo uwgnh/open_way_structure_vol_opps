@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Open Way - Configuration - Images Styles feature.
+ */
+
+include_once('open_way_configuration_images_styles.features.inc');

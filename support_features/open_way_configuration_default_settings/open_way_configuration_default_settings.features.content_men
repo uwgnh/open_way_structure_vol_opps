@@ -1,0 +1,75 @@
+<?php
+/**
+ * @file
+ * open_way_configuration_default_settings.features.content_menu_links.inc
+ */
+
+/**
+ * Implements hook_content_menu_links_defaults().
+ */
+function open_way_configuration_default_settings_content_menu_links_defaults() {
+  $menu_links = array();
+
+  // Exported menu link: menu-user-tools:user
+  $menu_links['menu-user-tools:user'] = array(
+    'menu_name' => 'menu-user-tools',
+    'link_path' => 'user',
+    'router_path' => 'user',
+    'link_title' => 'My Account',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+    ),
+    'module' => 'menu',
+    'hidden' => '0',
+    'external' => '0',
+    'has_children' => '0',
+    'expanded' => '0',
+    'weight' => '-50',
+  );
+  // Exported menu link: menu-user-tools:user/login
+  $menu_links['menu-user-tools:user/login'] = array(
+    'menu_name' => 'menu-user-tools',
+    'link_path' => 'user/login',
+    'router_path' => 'user/login',
+    'link_title' => 'Log In',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+    ),
+    'module' => 'menu',
+    'hidden' => '0',
+    'external' => '0',
+    'has_children' => '0',
+    'expanded' => '0',
+    'weight' => '-49',
+  );
+  // Exported menu link: menu-user-tools:user/logout
+  $menu_links['menu-user-tools:user/logout'] = array(
+    'menu_name' => 'menu-user-tools',
+    'link_path' => 'user/logout',
+    'router_path' => 'user/logout',
+    'link_title' => 'Log out',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+    ),
+    'module' => 'menu',
+    'hidden' => '0',
+    'external' => '0',
+    'has_children' => '0',
+    'expanded' => '0',
+    'weight' => '-48',
+  );
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Log In');
+  t('Log out');
+  t('My Account');
+
+
+  return $menu_links;
+}

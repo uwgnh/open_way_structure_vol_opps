@@ -1,0 +1,17 @@
+name = Open Way Volunteer - Configuration - Text Formats
+description = The basic text format options
+core = 7.x
+package = Open Way
+php = 5.2.4
+dependencies[] = features
+dependencies[] = image_resize_filter
+features[features_api][] = api:1
+features[filter][] = filtered_html
+features[filter][] = full_html
+features[filter][] = html_code
+features[filter][] = plain_text
+features[user_permission][] = administer filters
+features[user_permission][] = use text format filtered_html
+features[user_permission][] = use text format full_html
+features[user_permission][] = use text format html_code
+mtime = 1432234105
